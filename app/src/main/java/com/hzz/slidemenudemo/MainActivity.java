@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         View mRedBtn = findViewById(R.id.red_btn);
         View mBlueBtn = findViewById(R.id.blue_btn);
+        LinearLayout content = (LinearLayout) findViewById(R.id.content);
         SlideMenuLayout slideMenu = (SlideMenuLayout) findViewById(R.id.slide_menu);
         mBlueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 showToast("Red");
             }
         });
-        slideMenu.setViewClickListener(new View.OnClickListener() {
+        slideMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showToast("Slide Menu Click");
